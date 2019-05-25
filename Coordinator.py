@@ -2,13 +2,14 @@
 
 import Board
 import Player
+import Player_Random
 
-class coordinator(self):
+class Coordinator():
 
-    def __init__(self):
+    def __init__(self, px, po):
         self.board = Board()
-        xPlayer = Player('xTest','x')
-        oPlayer = Player('oTest','o')
+        xPlayer = px
+        oPlayer = po
         self.turn = 'x' # whose turn is it
 
     def play(self):
@@ -31,3 +32,12 @@ class coordinator(self):
                 else:
                     print("Illegal move attempted. Select a different move")
 
+
+        self.board.show()
+
+
+
+testCoord = Coordinator(Player_Random('xTest','x'),\
+                        Player_Random('oTest','o'))
+
+testCoord.play()
